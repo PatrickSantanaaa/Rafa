@@ -9,13 +9,15 @@
     <body>
       <div class="background-overlay">
         <nav class="navbar">
-          <ul>
-            <li class="active" onclick="showTab('introduction')">Introduction</li>
-            <li onclick="showTab('team')">The Project Team</li>
-            <li onclick="showTab('activities')">Activities and Achievements</li>
-            <li onclick="showTab('contact')">Contact</li>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul id="nav-menu">
+            <li class="active" onclick="showTab('introduction', event)">Introduction</li>
+            <li onclick="showTab('team', event)">The Project Team</li>
+            <li onclick="showTab('activities', event)">Activities and Achievements</li>
+            <li onclick="showTab('contact', event)">Contact</li>
           </ul>
         </nav>
+
 
         <header class="respiroHeader">
           <h1>FAPERJ Project: Heavy Ions Physics &<br> Electromagnetic Calorimeter Operations in CMS</h1>
