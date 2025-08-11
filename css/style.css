@@ -4,7 +4,7 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
   height: 100%;
-  background: url('../img/fundo.jpg') no-repeat center center fixed;
+  background: url('../img/fundo.jpg') no-repeat center center;
   background-size: cover;
 }
 
@@ -144,5 +144,13 @@ header h1 {
     width: 100%;
     padding: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+    
+  }
+
+  .navbar li:hover,
+  .navbar .active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    width: 20%;
   }
 }
