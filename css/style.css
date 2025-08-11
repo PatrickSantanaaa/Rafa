@@ -4,8 +4,19 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
   height: 100%;
-  background: url('../img/fundo.jpg') no-repeat center center;
+
+  /* Fundo com cor base para evitar branco durante carregamento */
+  background: #0a1e1d url('../img/fundo.jpg') no-repeat center center;
+
+  /* Mantém o background responsivo */
   background-size: cover;
+}
+
+/* Para desktop, manter o background fixo */
+@media (min-width: 768px) {
+  body, html {
+    background-attachment: fixed;
+  }
 }
 
 .background-overlay {
@@ -18,8 +29,7 @@ body, html {
   background-color: #1d3e3db8;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   top: 0;
   z-index: 1000;
 }
@@ -36,23 +46,12 @@ body, html {
 .navbar li {
   padding: 10px 15px;
   color: #fff;
-  cursor: pointer;
 }
 
 .navbar li:hover,
 .navbar .active {
   color: #fff;
   border-bottom: 2px solid #fff;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-right: 10px;
 }
 
 header {
@@ -79,7 +78,7 @@ header h1 {
   margin: 10px 0;
 }
 
-.respiroParagrafos {
+.respiroParagrafos{
   padding: 15px;
   margin: 0;
   line-height: 1.6;
@@ -117,40 +116,4 @@ header h1 {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* RESPONSIVIDADE PARA TELAS PEQUENAS */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-  .navbar li {
-    width: 100%;
-    padding: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    
-  }
-
-  .navbar li:hover,
-  .navbar .active {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    width: 20%;
-  }
 }
