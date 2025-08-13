@@ -8,10 +8,15 @@ body, html {
   background-size: cover;
 }
 
+html {
+  height: 100%;
+}
+
 .background-overlay {
   background: rgba(0, 0, 0, 0.400);
   min-height: 100vh;
   padding-bottom: 30px;
+  flex: 1;
 }
 
 .navbar {
@@ -70,7 +75,8 @@ header h1 {
 .textoPrincipal {
   background-color: #1d3e3d;
   color: #fff;
-  padding: 1rem;
+  padding: 10px;
+  margin: 5px 0;
   border-radius: 5px 5px 0 0 ;
 }
 
@@ -98,7 +104,6 @@ header h1 {
 
 .active-tab {
   display: block;
-  padding: 1rem 0;
 }
 
 .content-box {
@@ -120,10 +125,10 @@ header h1 {
   text-align: center;
   padding: 5px 10px;
   font-size: 14px;
-  position: fixed; /* fixa o footer na parte inferior */
+  /* position: fixed; fixa o footer na parte inferior */
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   /* box-shadow: 0 -2px 5px rgba(0,0,0,0.3); */
 }
 
