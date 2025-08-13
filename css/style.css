@@ -3,20 +3,9 @@ body, html {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  height: 100%;
-
-  /* Fundo com cor base para evitar branco durante carregamento */
-  background: #0a1e1d url('../img/fundo.jpg') no-repeat center center;
-
-  /* Mantém o background responsivo */
+  min-height: 100vh;
+  background: url('../img/fundo.jpg') no-repeat center center fixed;
   background-size: cover;
-}
-
-/* Para desktop, manter o background fixo */
-@media (min-width: 768px) {
-  body, html {
-    background-attachment: fixed;
-  }
 }
 
 .background-overlay {
@@ -30,6 +19,7 @@ body, html {
   padding: 10px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   top: 0;
   z-index: 1000;
 }
@@ -46,12 +36,23 @@ body, html {
 .navbar li {
   padding: 10px 15px;
   color: #fff;
+  cursor: pointer;
 }
 
 .navbar li:hover,
 .navbar .active {
   color: #fff;
   border-bottom: 2px solid #fff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 header {
@@ -78,7 +79,7 @@ header h1 {
   margin: 10px 0;
 }
 
-.respiroParagrafos{
+.respiroParagrafos {
   padding: 15px;
   margin: 0;
   line-height: 1.6;
@@ -113,7 +114,93 @@ header h1 {
   align-items: center;
 }
 
+.site-footer {
+  background-color: #1d3e3db8;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 14px;
+  position: fixed; /* fixa o footer na parte inferior */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* box-shadow: 0 -2px 5px rgba(0,0,0,0.3); */
+}
+
+a,
+a:visited {
+   color: #4FC3F7; /* azul claro para links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-footer a,
+.site-footer a:visited{
+  color: #4FC3F7; /* azul claro para links */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVIDADE PARA TELAS PEQUENAS */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mostra o hambúrguer apenas no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start; /* Hambúrguer à esquerda */
+  }
+
+  .navbar li {
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .navbar li:hover,
+  .navbar .active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Esconde o menu tradicional no mobile */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1d3e3db8;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+
+  /* Mostra o menu quando a classe .show estiver presente */
+  .navbar ul.show {
+    display: flex;
+  }
 }
