@@ -14,9 +14,9 @@ html {
 
 .background-overlay {
   background: rgba(0, 0, 0, 0.400);
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding-top: 60px; /* altura do navbar */
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   flex: 1;
 }
 
