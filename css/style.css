@@ -1,17 +1,19 @@
-body, html {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  min-height: 100vh;
   background: url('../img/fundo.jpg') no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .background-overlay {
   background: rgba(0, 0, 0, 0.400);
-  min-height: 100vh;
-  padding-bottom: 30px;
+  flex: 1; /* Ocupa o espaço restante da tela */
+  padding-bottom: 30px; /* Espaço antes do footer */
 }
 
 .navbar {
@@ -72,7 +74,7 @@ header h1 {
   color: #fff;
   padding: 10px;
   margin: 5px 0;
-  border-radius: 5px 5px 0 0 ;
+  border-radius: 5px 5px 0 0;
 }
 
 .textoSecundario {
@@ -118,28 +120,23 @@ header h1 {
   background-color: #1d3e3db8;
   color: #fff;
   text-align: center;
-  /* padding: 5px 10px; */
   font-size: 14px;
-  position: fixed; /* fixa o footer na parte inferior */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  /* box-shadow: 0 -2px 5px rgba(0,0,0,0.3); */
+  padding: 10px;
 }
 
 a,
 a:visited {
-   color: #4FC3F7; /* azul claro para links */
-    text-decoration: none;
+  color: #4FC3F7;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .site-footer a,
-.site-footer a:visited{
-  color: #4FC3F7; /* azul claro para links */
+.site-footer a:visited {
+  color: #4FC3F7;
   text-decoration: none;
 }
 
@@ -157,16 +154,6 @@ a:hover {
 }
 
 /* RESPONSIVIDADE PARA TELAS PEQUENAS */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* Mostra o hambúrguer apenas no mobile */
 @media (max-width: 768px) {
   .navbar {
     justify-content: flex-start; /* Hambúrguer à esquerda */
